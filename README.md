@@ -90,3 +90,15 @@ transformer-from-scratch/
 │
 └── logs/
     └── progress.md
+
+
+##    How I am learning
+
+For every task, I try to answer 4 things:
+
+What is the input shape?
+What operation is happening?
+What is the output shape?
+Why is this needed?
+
+This keeps the focus on understanding instead of blindly coding.
