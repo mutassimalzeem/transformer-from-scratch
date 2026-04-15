@@ -1,0 +1,57 @@
+
+---
+
+## `.gitignore`
+
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing / cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Local secrets
+.env
+
+# Coverage
+.coverage
+htmlcov/
+
+# Torch / large temp files
+*.pt
+*.pth
+
+# Optional dataset or output folders
+data/
+outputs/
+checkpoints/
