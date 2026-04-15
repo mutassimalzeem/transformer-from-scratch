@@ -91,6 +91,7 @@ transformer-from-scratch/
 └── logs/
     └── progress.md
 
+```
 
 ##    How I am learning
 
@@ -102,3 +103,95 @@ What is the output shape?
 Why is this needed?
 
 This keeps the focus on understanding instead of blindly coding.
+
+
+
+##    Progress Roadmap
+Phase 1 — Embeddings
+ Create manual vocabulary
+ Convert sentence to token ids
+ Perform embedding lookup
+ Inspect output shape
+
+
+Phase 2 — Positional Encoding
+ Create position indices
+ Build positional vectors
+ Add positional encoding to embeddings
+ Compare before vs after
+
+
+Phase 3 — Basic Self-Attention
+ Compute similarity scores
+ Convert scores to weights
+ Compute weighted sum
+ Interpret contextual embedding
+
+
+Phase 4 — QKV Attention
+ Create Query, Key, Value
+ Compute attention score matrix
+ Apply scaling
+ Apply softmax
+ Multiply with Value
+
+
+Phase 5 — Multi-Head Attention
+ Split into heads
+ Run attention per head
+ Concatenate heads
+ Final projection
+
+
+Phase 6 — Residual + LayerNorm + FFN
+ Residual connection
+ Layer normalization
+ Feed-forward network
+ Add + Norm again
+
+
+Phase 7 — Encoder Block
+ Combine all encoder components
+ Test on toy input
+ Verify shapes at every step
+
+
+Phase 8 — Decoder Concepts
+ Masked self-attention
+ Cross-attention
+ Decoder intuition
+ Inference intuition
+
+
+##    Notes Format
+Each phase contains an observations.md file.
+For every task, I write:
+
+Input shape
+Output shape
+What changed
+What confused me
+What I understood
+
+
+Run
+Create environment and install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Run a task file:
+```bash
+python experiments/phase_01_embeddings/task_01_token_to_id.py
+```
+
+##    Why this repo exists
+
+The purpose of this repository is to turn theoretical Transformer knowledge into practical understanding through small implementations and shape-based reasoning.
+
+##    Future Improvements
+- Add PyTorch module versions after manual implementations
+- Add visualization notebooks
+- Add attention heatmaps
+- Add mini encoder-decoder project
+- Add toy next-token prediction example
