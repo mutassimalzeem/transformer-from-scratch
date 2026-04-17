@@ -17,10 +17,6 @@ Linear Layer 2: Shrinks the wider dimension back down to d_model."""
 from experiments.phase_06_layernorm_residual_ffn.task_02_layer_norm import normed_output1
 from experiments.phase_04_qkv_attention.task_01_make_qkv import d_model
 
-# nn.Linear(norm1, norm1 * 4)
-# nn.ReLU()
-# ff_output = nn.Linear(norm1 * 4, norm1)
-
 
 # 1. Build the bundled FFN machinery
 ffn_block = nn.Sequential(

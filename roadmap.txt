@@ -23,20 +23,20 @@
 - [x] task_02_parallel_heads.py → parallel attn
 - [x] task_03_concat_heads.py → [6,8] w/ projection
 
-## ✅ Phase 6: LayerNorm/Residual/FFN (COMPLETE) **NEW**
+## ✅ Phase 6: LayerNorm/Residual/FFN (COMPLETE)
 - [x] task_01_residual_add.py → x + attn(x)
 - [x] task_02_layer_norm.py → stabilize
 - [x] task_03_feed_forward.py → expand-ReLU-shrink
 - [x] task_04_Add_and_Norm_2.py → final norm
 
-## 🔄 Phase 7: Encoder Block (NEXT)
-- [ ] task_01_build_encoder_block.py
+## ✅ Phase 7: Encoder Block (COMPLETE) **NEW**
+- [x] task_01_build_encoder_block.py → Full modular encoder!
 
-## ⏳ Phase 8: Decoder Concepts
+## ⏳ Phase 8: Decoder Concepts (NEXT)
 - [ ] task_01_masked_attention.py
 - [ ] task_02_cross_attention.py
 
-## 🎯 Next Milestone: Full Encoder Block (Phase 7)
+## 🎯 Next: Decoder (Phase 8)
 
-**Run Status:** Phases 1-6 execute perfectly!
+**Run Status:** Phases 1-7 execute perfectly! 7/8 ✅
 
