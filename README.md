@@ -1,4 +1,4 @@
-# Transformer From Scratch [![Phase 5 ✅](https://img.shields.io/badge/Progress-Phase%205%20Complete-brightgreen)](https://github.com/)
+# Transformer From Scratch [![Phase 6 ✅](https://img.shields.io/badge/Progress-Phase%206%20Complete-brightgreen)](https://github.com/)
 
 Learning Transformer architecture from scratch in small, beginner-friendly steps.
 
@@ -8,15 +8,16 @@ Learning Transformer architecture from scratch in small, beginner-friendly steps
 
 ```bash
 pip install -r requirements.txt
-cd experiments/phase_05_multi_head_attention
-python task_01_split_heads.py   # [6,8] → [2,6,4]
-python task_02_parallel_heads.py # Parallel attention
-python task_03_concat_heads.py   # → [6,8] complete!
+cd experiments/phase_06_layernorm_residual_ffn
+python task_01_residual_add.py     # x + attn(x)
+python task_02_layer_norm.py       # Stabilize [6,8]  
+python task_03_feed_forward.py     # Expand 8→32→8 ReLU
+python task_04_Add_and_Norm_2.py   # Full encoder layer!
 ```
 
-**Test all Phase 5:** `for f in task_*.py; do python $f; done`
+**Test Phase 6:** `for f in task_*.py; do python $f; done`
 
-## 📊 Progress: 5/8 Phases Complete
+## 📊 Progress: 6/8 Phases Complete
 
 | Phase | Status | Key Achievement |
 |-------|--------|-----------------|
@@ -24,9 +25,9 @@ python task_03_concat_heads.py   # → [6,8] complete!
 | 2️⃣ Positional | ✅ | Position encoding added |
 | 3️⃣ Single-head | ✅ | Basic self-attention |
 | 4️⃣ QKV | ✅ | Scaled dot-product |
-| **5️⃣ Multi-head** | **✅ NEW** | **Split → Parallel → Concat** |
-| 6️⃣ Residual/LN/FFN | 🔄 50% | Tasks ready |
-| 7️⃣ Encoder Block | ⏳ | - |
+| 5️⃣ Multi-head | ✅ | Split → Parallel → Concat |
+| **6️⃣ Residual/LN/FFN** | **✅ NEW** | **Residual → Norm → FFN → Norm** |
+| 7️⃣ Encoder Block | 🔄 | - |
 | 8️⃣ Decoder | ⏳ | - |
 
 **Full checklist:** [roadmap.txt](roadmap.txt)
@@ -35,12 +36,12 @@ python task_03_concat_heads.py   # → [6,8] complete!
 
 ```
 experiments/
-├── phase_01_embeddings/          # Vocab → embeddings
-├── phase_02_positional_encoding/ # + position vectors  
+├── phase_01_embeddings/          
+├── phase_02_positional_encoding/ 
 ├── phase_03_single_head_attention/
-├── phase_04_qkv_attention/       # Q,K,V projections
-├── phase_05_multi_head_attention/ # 👈 LATEST: [6,8] preserved!
-├── phase_06_layernorm_residual_ffn/
+├── phase_04_qkv_attention/       
+├── phase_05_multi_head_attention/
+├── phase_06_layernorm_residual_ffn/ # 👈 LATEST: Full encoder internals!
 └── ... decoder phases
 ```
 
@@ -54,21 +55,21 @@ experiments/
 3. **Output shape?**
 4. **Why needed?**
 
-## 📈 Shape Evolution (Phase 5)
+## 📈 Shape Evolution (Phase 6)
 ```
-[6,8] Q/K/V 
-  ↓ split_heads
-[2,6,4] heads  
-  ↓ parallel_attn  
-[2,6,4] outputs
-  ↓ concat+project
-[6,8] multi-head ✓
+Multihead [6,8]
+  ↓ residual+add
+[6,8] + attn    
+  ↓ LayerNorm1
+Normed [6,8]    
+  ↓ FFN (8→32→8)
+FFN [6,8]       
+  ↓ residual+add+Norm2
+Encoder layer [6,8] ✓
 ```
 
-## 🔮 Next: Phase 6
-- Residual connections
-- Layer normalization  
-- Feed-forward network
+## 🔮 Next: Phase 7
+- Full encoder block assembly
 
 ## 📚 Resources
 - [utils/shapes.md](utils/shapes.md)
@@ -77,11 +78,11 @@ experiments/
 
 ## Run All Tests
 ```bash
-# Phase 5 demo
-cd experiments/phase_05_multi_head_attention && python task_03_concat_heads.py
+# Phase 6 demo (full layer internals)
+cd experiments/phase_06_layernorm_residual_ffn && python task_04_Add_and_Norm_2.py
 
-# All phases (manual for now)
-for p in phase_0{1..5}; do echo \"=== $p ===\"; cd experiments/$p && ls task_*.py; cd ../..; done
+# Phase summary
+for p in phase_0{1..6}; do echo \"=== $p ===\" && cd experiments/$p && ls task_*.py && cd ../..; done
 ```
 
 ---

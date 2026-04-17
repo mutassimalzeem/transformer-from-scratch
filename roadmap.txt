@@ -1,1 +1,42 @@
-# Transformer From Scratch - Detailed Roadmap\n\n## ✅ Phase 1: Embeddings (COMPLETE)\n- [x] task_01_token_to_id.py\n- [x] task_02_embedding_lookup.py\n\n## ✅ Phase 2: Positional Encoding (COMPLETE)  \n- [x] task_01_manual_positions.py\n- [x] task_02_add_position_to_embedding.py\n\n## ✅ Phase 3: Single Head Attention (COMPLETE)\n- [x] task_01_similarity_scores.py\n- [x] task_02_softmax_weights.py\n- [x] task_03_weighted_sum.py\n\n## ✅ Phase 4: QKV Attention (COMPLETE)\n- [x] task_01_make_qkv.py\n- [x] task_02_attention_scores.py\n- [x] task_03_scaled_attention.py\n\n## ✅ Phase 5: Multi-Head Attention (COMPLETE)\n- [x] task_01_split_heads.py → [2,6,4]\n- [x] task_02_parallel_heads.py → parallel attn\n- [x] task_03_concat_heads.py → [6,8] w/ projection\n\n## 🔄 Phase 6: LayerNorm/Residual/FFN (NEXT)\n- [ ] task_01_residual_add.py\n- [ ] task_02_layer_norm.py\n- [ ] task_03_feed_forward.py\n\n## ⏳ Phase 7: Encoder Block\n- [ ] task_01_build_encoder_block.py\n\n## ⏳ Phase 8: Decoder Concepts\n- [ ] task_01_masked_attention.py\n- [ ] task_02_cross_attention.py\n\n## 🎯 Next Milestone: Finish Phase 6 → Full Encoder\n\n**Run Status:** All Phase 1-5 tasks execute with correct shapes!\n
+# Transformer From Scratch - Detailed Roadmap
+
+## ✅ Phase 1: Embeddings (COMPLETE)
+- [x] task_01_token_to_id.py
+- [x] task_02_embedding_lookup.py
+
+## ✅ Phase 2: Positional Encoding (COMPLETE)  
+- [x] task_01_manual_positions.py
+- [x] task_02_add_position_to_embedding.py
+
+## ✅ Phase 3: Single Head Attention (COMPLETE)
+- [x] task_01_similarity_scores.py
+- [x] task_02_softmax_weights.py
+- [x] task_03_weighted_sum.py
+
+## ✅ Phase 4: QKV Attention (COMPLETE)
+- [x] task_01_make_qkv.py
+- [x] task_02_attention_scores.py
+- [x] task_03_scaled_attention.py
+
+## ✅ Phase 5: Multi-Head Attention (COMPLETE)
+- [x] task_01_split_heads.py → [2,6,4]
+- [x] task_02_parallel_heads.py → parallel attn
+- [x] task_03_concat_heads.py → [6,8] w/ projection
+
+## ✅ Phase 6: LayerNorm/Residual/FFN (COMPLETE) **NEW**
+- [x] task_01_residual_add.py → x + attn(x)
+- [x] task_02_layer_norm.py → stabilize
+- [x] task_03_feed_forward.py → expand-ReLU-shrink
+- [x] task_04_Add_and_Norm_2.py → final norm
+
+## 🔄 Phase 7: Encoder Block (NEXT)
+- [ ] task_01_build_encoder_block.py
+
+## ⏳ Phase 8: Decoder Concepts
+- [ ] task_01_masked_attention.py
+- [ ] task_02_cross_attention.py
+
+## 🎯 Next Milestone: Full Encoder Block (Phase 7)
+
+**Run Status:** Phases 1-6 execute perfectly!
+
