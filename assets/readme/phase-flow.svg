@@ -1,0 +1,57 @@
+<svg width="1200" height="180" viewBox="0 0 1200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="track" x1="70" y1="90" x2="1130" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="180" rx="24" fill="#0B1623"/>
+  <path d="M70 90H1130" stroke="url(#track)" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">
+    <g>
+      <circle cx="110" cy="90" r="20" fill="#0F766E"/>
+      <text x="110" y="96" fill="#F8FAFC" font-size="15" font-weight="700">01</text>
+      <text x="110" y="134" fill="#C9D7E3" font-size="12">Embed</text>
+    </g>
+    <g>
+      <circle cx="245" cy="90" r="20" fill="#115E59"/>
+      <text x="245" y="96" fill="#F8FAFC" font-size="15" font-weight="700">02</text>
+      <text x="245" y="134" fill="#C9D7E3" font-size="12">Position</text>
+    </g>
+    <g>
+      <circle cx="380" cy="90" r="20" fill="#0F766E"/>
+      <text x="380" y="96" fill="#F8FAFC" font-size="15" font-weight="700">03</text>
+      <text x="380" y="134" fill="#C9D7E3" font-size="12">Attention</text>
+    </g>
+    <g>
+      <circle cx="515" cy="90" r="20" fill="#0E7490"/>
+      <text x="515" y="96" fill="#F8FAFC" font-size="15" font-weight="700">04</text>
+      <text x="515" y="134" fill="#C9D7E3" font-size="12">QKV</text>
+    </g>
+    <g>
+      <circle cx="650" cy="90" r="20" fill="#0369A1"/>
+      <text x="650" y="96" fill="#F8FAFC" font-size="15" font-weight="700">05</text>
+      <text x="650" y="134" fill="#C9D7E3" font-size="12">Multi-Head</text>
+    </g>
+    <g>
+      <circle cx="785" cy="90" r="20" fill="#7C3AED"/>
+      <text x="785" y="96" fill="#F8FAFC" font-size="15" font-weight="700">06</text>
+      <text x="785" y="134" fill="#C9D7E3" font-size="12">FFN + LN</text>
+    </g>
+    <g>
+      <circle cx="920" cy="90" r="20" fill="#B45309"/>
+      <text x="920" y="96" fill="#F8FAFC" font-size="15" font-weight="700">07</text>
+      <text x="920" y="134" fill="#C9D7E3" font-size="12">Encoder</text>
+    </g>
+    <g>
+      <circle cx="1055" cy="90" r="20" fill="#EA580C"/>
+      <text x="1055" y="96" fill="#F8FAFC" font-size="15" font-weight="700">08</text>
+      <text x="1055" y="134" fill="#C9D7E3" font-size="12">Decoder</text>
+    </g>
+  </g>
+
+  <circle cx="110" cy="90" r="8" fill="#F8FAFC">
+    <animate attributeName="cx" values="110;1055;110" dur="6s" repeatCount="indefinite"/>
+  </circle>
+</svg>
