@@ -1,77 +1,50 @@
-# Transformer From Scratch [![Phase 7 ✅](https://img.shields.io/badge/Progress-Phase%207%20Complete-brightgreen)](https://github.com/)
+# Transformer From Scratch [![All Phases ✅](https://img.shields.io/badge/Progress-100%25_Complete-brightgreen)](https://github.com/)
 
-Learning Transformer architecture from scratch in small, beginner-friendly steps.
+**FULLY COMPLETED** — 8 phases building complete Transformer understanding!
 
-**Goal:** Deep understanding through shape-first implementations.
+**Mastered:** Embeddings → Encoder → Decoder concepts.
 
-## 🚀 Quick Start
+## 🚀 Run Complete Project
 
 ```bash
 pip install -r requirements.txt
-cd experiments/phase_07_encoder_block
-python task_01_build_encoder_block.py  # token_ids [2,6] → [2,6,8] FULL ENCODER!
+# Test Phase 8 decoder
+cd experiments/phase_08_decoder_concepts
+python task_01_masked_attention.py  # Causal mask ✓
+python task_02_cross_attention.py    # Cross-attn ✓
+
+# Test all (one-liner)
+for p in {01..08}; do echo \"=== Phase 0$p ===\"; cd experiments/phase_0$p* && ls task_*.py | xargs -I {} sh -c 'python {} &>/dev/null && echo {} ✓'; cd ../..; done
 ```
 
-**Test Phase 7:** `python task_01_build_encoder_block.py`
+## 📊 8/8 Phases Complete 🏆
 
-## 📊 Progress: 7/8 Phases Complete
+| Phase | Status | Shapes |
+|-------|--------|--------|
+| 1 Embeddings | ✅ | `(seq, d_model)` |
+| 2 Positional | ✅ | +PE `(seq, d_model)` |
+| 3 Single Attn | ✅ | `(seq, seq)` scores |
+| 4 QKV | ✅ | Scaled dot-product |
+| 5 Multi-Head | ✅ | Heads concat `(seq, d_model)` |
+| 6 Res/LN/FFN | ✅ | Skip connections |
+| 7 Encoder | ✅ | Full encoder block |
+| **8 Decoder** | **✅** | **Masked + Cross** |
 
-| Phase | Status | Key Achievement |
-|-------|--------|-----------------|
-| 1️⃣ Embeddings | ✅ | Token → embedding lookup |
-| 2️⃣ Positional | ✅ | Position encoding added |
-| 3️⃣ Single-head | ✅ | Basic self-attention |
-| 4️⃣ QKV | ✅ | Scaled dot-product |
-| 5️⃣ Multi-head | ✅ | Split → Parallel → Concat |
-| 6️⃣ Residual/LN/FFN | ✅ | Residual → Norm → FFN → Norm |
-| **7️⃣ Encoder Block** | **✅ NEW** | **Modular nn.Module encoder!** |
-| 8️⃣ Decoder | ⏳ | - |
+## 📖 Learning Path
+Each `observations.md`: **Input → Output → Insight** 
 
-**Full checklist:** [roadmap.txt](roadmap.txt)
+**Shape-first debugging** mastered.
 
-## 📁 Structure
-
-```
-experiments/
-├── phase_01-06/                 # Building blocks
-├── phase_07_encoder_block/      # 👈 LATEST: FULL ENCODER!
-└── phase_08_decoder_concepts/   # Final frontier
-```
-
-## 📈 Shape Evolution (Phase 7)
-```
-token_ids [B,T] e.g. [2,6]
-  ↓ embed + pos embed
-[B,T,d_model] [2,6,8]
-  ↓ EncoderBlock (all phases 3-6)
-[B,T,d_model] [2,6,8] ✓
-```
-
-## 🎓 Learning Method
-**4 Questions Per Task:**
-1. Input shape?
-2. Operation? 
-3. Output shape?
-4. Why needed?
-
-## 🔮 Next: Phase 8 Decoder
-- Masked attention
-- Cross-attention
+## 🎓 Next Steps
+- [ ] Build full encoder-decoder
+- [ ] Train tiny GPT/Translator
+- [ ] Add visualizations
 
 ## 📚 Resources
-- [utils/shapes.md](utils/shapes.md)
-- [logs/progress.md](logs/progress.md)
-- All `observations.md` files
-
-## Run All Tests
-```bash
-# Phase 7 full encoder
-cd experiments/phase_07_encoder_block && python task_01_build_encoder_block.py
-
-# Summary
-for p in phase_0{1..7}; do echo \"=== $p ===\" && ls experiments/$p/task_*.py; done
-```
+- `logs/progress.md` - Final summary
+- `roadmap.txt` - All [x] checked  
+- `utils/shapes.md` - Reference
 
 ---
-**7/8 phases: Encoder complete! Ready for decoder.** ❤️
+**Achievement Unlocked: Transformer from Scratch!** 🎉 All docs ready for GitHub push.
 
