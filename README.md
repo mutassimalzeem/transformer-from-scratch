@@ -1,197 +1,89 @@
-# Transformer From Scratch
+# Transformer From Scratch [![Phase 5 ✅](https://img.shields.io/badge/Progress-Phase%205%20Complete-brightgreen)](https://github.com/)
 
-Learning the Transformer architecture from scratch in small, beginner-friendly steps.
+Learning Transformer architecture from scratch in small, beginner-friendly steps.
 
-This repository is not about copying a full implementation directly.  
-The goal is to understand each building block deeply by implementing it phase by phase.
+**Goal:** Deep understanding through shape-first implementations.
 
-## Learning Goal
+## 🚀 Quick Start
 
-Build intuition first, then code.
-
-Topics covered in this journey:
-
-- Tokenization and vocabulary
-- Embedding lookup
-- Positional encoding
-- Basic self-attention intuition
-- Query, Key, Value (QKV)
-- Scaled dot-product attention
-- Multi-head attention
-- Residual connections
-- Layer normalization
-- Feed-forward network
-- Encoder block
-- Masked self-attention
-- Cross-attention
-- Decoder concepts
-
----
-
-## Project Structure
-
-```text
-transformer-from-scratch/
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-│
-├── notes/
-│   └── transformer_notes.pdf
-│
-├── experiments/
-│   ├── phase_01_embeddings/
-│   │   ├── task_01_token_to_id.py
-│   │   ├── task_02_embedding_lookup.py
-│   │   └── observations.md
-│   │
-│   ├── phase_02_positional_encoding/
-│   │   ├── task_01_manual_positions.py
-│   │   ├── task_02_add_position_to_embedding.py
-│   │   └── observations.md
-│   │
-│   ├── phase_03_single_head_attention/
-│   │   ├── task_01_similarity_scores.py
-│   │   ├── task_02_softmax_weights.py
-│   │   ├── task_03_weighted_sum.py
-│   │   └── observations.md
-│   │
-│   ├── phase_04_qkv_attention/
-│   │   ├── task_01_make_qkv.py
-│   │   ├── task_02_attention_scores.py
-│   │   ├── task_03_scaled_attention.py
-│   │   └── observations.md
-│   │
-│   ├── phase_05_multi_head_attention/
-│   │   ├── task_01_split_heads.py
-│   │   ├── task_02_parallel_heads.py
-│   │   ├── task_03_concat_heads.py
-│   │   └── observations.md
-│   │
-│   ├── phase_06_layernorm_residual_ffn/
-│   │   ├── task_01_residual_add.py
-│   │   ├── task_02_layer_norm.py
-│   │   ├── task_03_feed_forward.py
-│   │   └── observations.md
-│   │
-│   ├── phase_07_encoder_block/
-│   │   ├── task_01_build_encoder_block.py
-│   │   └── observations.md
-│   │
-│   └── phase_08_decoder_concepts/
-│       ├── task_01_masked_attention.py
-│       ├── task_02_cross_attention.py
-│       └── observations.md
-│
-├── utils/
-│   ├── shapes.md
-│   └── helper_notes.md
-│
-└── logs/
-    └── progress.md
-
-```
-
-##    How I am learning
-
-For every task, I try to answer 4 things:
-
-What is the input shape?
-What operation is happening?
-What is the output shape?
-Why is this needed?
-
-This keeps the focus on understanding instead of blindly coding.
-
-
-
-##    Progress Roadmap
-Phase 1 — Embeddings
- Create manual vocabulary
- Convert sentence to token ids
- Perform embedding lookup
- Inspect output shape
-
-
-Phase 2 — Positional Encoding
- Create position indices
- Build positional vectors
- Add positional encoding to embeddings
- Compare before vs after
-
-
-Phase 3 — Basic Self-Attention
- Compute similarity scores
- Convert scores to weights
- Compute weighted sum
- Interpret contextual embedding
-
-
-Phase 4 — QKV Attention
- Create Query, Key, Value
- Compute attention score matrix
- Apply scaling
- Apply softmax
- Multiply with Value
-
-
-Phase 5 — Multi-Head Attention
- Split into heads
- Run attention per head
- Concatenate heads
- Final projection
-
-
-Phase 6 — Residual + LayerNorm + FFN
- Residual connection
- Layer normalization
- Feed-forward network
- Add + Norm again
-
-
-Phase 7 — Encoder Block
- Combine all encoder components
- Test on toy input
- Verify shapes at every step
-
-
-Phase 8 — Decoder Concepts
- Masked self-attention
- Cross-attention
- Decoder intuition
- Inference intuition
-
-
-##    Notes Format
-Each phase contains an observations.md file.
-For every task, I write:
-
-Input shape
-Output shape
-What changed
-What confused me
-What I understood
-
-
-Run
-Create environment and install dependencies:
 ```bash
 pip install -r requirements.txt
+cd experiments/phase_05_multi_head_attention
+python task_01_split_heads.py   # [6,8] → [2,6,4]
+python task_02_parallel_heads.py # Parallel attention
+python task_03_concat_heads.py   # → [6,8] complete!
 ```
 
-Run a task file:
+**Test all Phase 5:** `for f in task_*.py; do python $f; done`
+
+## 📊 Progress: 5/8 Phases Complete
+
+| Phase | Status | Key Achievement |
+|-------|--------|-----------------|
+| 1️⃣ Embeddings | ✅ | Token → embedding lookup |
+| 2️⃣ Positional | ✅ | Position encoding added |
+| 3️⃣ Single-head | ✅ | Basic self-attention |
+| 4️⃣ QKV | ✅ | Scaled dot-product |
+| **5️⃣ Multi-head** | **✅ NEW** | **Split → Parallel → Concat** |
+| 6️⃣ Residual/LN/FFN | 🔄 50% | Tasks ready |
+| 7️⃣ Encoder Block | ⏳ | - |
+| 8️⃣ Decoder | ⏳ | - |
+
+**Full checklist:** [roadmap.txt](roadmap.txt)
+
+## 📁 Structure
+
+```
+experiments/
+├── phase_01_embeddings/          # Vocab → embeddings
+├── phase_02_positional_encoding/ # + position vectors  
+├── phase_03_single_head_attention/
+├── phase_04_qkv_attention/       # Q,K,V projections
+├── phase_05_multi_head_attention/ # 👈 LATEST: [6,8] preserved!
+├── phase_06_layernorm_residual_ffn/
+└── ... decoder phases
+```
+
+**Docs per phase:** `observations.md` = shapes + insights
+
+## 🎓 Learning Method
+
+**For every task ask:**
+1. **Input shape?**
+2. **What operation?** 
+3. **Output shape?**
+4. **Why needed?**
+
+## 📈 Shape Evolution (Phase 5)
+```
+[6,8] Q/K/V 
+  ↓ split_heads
+[2,6,4] heads  
+  ↓ parallel_attn  
+[2,6,4] outputs
+  ↓ concat+project
+[6,8] multi-head ✓
+```
+
+## 🔮 Next: Phase 6
+- Residual connections
+- Layer normalization  
+- Feed-forward network
+
+## 📚 Resources
+- [utils/shapes.md](utils/shapes.md)
+- [logs/progress.md](logs/progress.md) 
+- [notes/transformer_notes.pdf](notes/transformer_notes.pdf)
+
+## Run All Tests
 ```bash
-python experiments/phase_01_embeddings/task_01_token_to_id.py
+# Phase 5 demo
+cd experiments/phase_05_multi_head_attention && python task_03_concat_heads.py
+
+# All phases (manual for now)
+for p in phase_0{1..5}; do echo \"=== $p ===\"; cd experiments/$p && ls task_*.py; cd ../..; done
 ```
 
-##    Why this repo exists
+---
+**Made with ❤️ for shape debugging and PyTorch experimentation**
 
-The purpose of this repository is to turn theoretical Transformer knowledge into practical understanding through small implementations and shape-based reasoning.
-
-##    Future Improvements
-- Add PyTorch module versions after manual implementations
-- Add visualization notebooks
-- Add attention heatmaps
-- Add mini encoder-decoder project
-- Add toy next-token prediction example

@@ -1,10 +1,1 @@
-# Progress Log
-
-## Phase 1
-- Started embeddings
-- Created manual vocabulary
-- Converted sentence to token ids
-
-## Notes
-- Focus: understanding shapes first
-- Rule: never move to next phase without understanding current one
+# Transformer Progress Log\n\n## 🟢 COMPLETE Phases\n\n### Phase 1: Embeddings ✅\n- Manual vocab → token IDs\n- Embedding lookup [vocab_size, d_model]\n\n### Phase 2: Positional Encoding ✅  \n- Position indices + sinusoidal encoding\n- Added to embeddings [seq_len, d_model]\n\n### Phase 3: Single Head Attention ✅\n- Similarity scores → softmax weights → weighted sum\n\n### Phase 4: QKV Attention ✅\n- Linear projections to Q,K,V\n- Scaled dot-product: scores / √d_k → softmax → @V\n- Shape preserved [6,8]\n\n### Phase 5: Multi-Head Attention ✅ **NEW**\n- Split [6,8] → 2 heads [2,6,4]\n- Parallel attention per head\n- Concat + project → [6,8]\n\n## 🔄 IN PROGRESS\n- Phase 6: Residuals/LayerNorm/FFN (tasks exist)\n\n## ⏳ FUTURE\n- Phase 7: Encoder Block\n- Phase 8: Decoder Concepts\n\n## 📈 Overall Status\n| Phase | Status | Shapes Verified |\n|-------|--------|-----------------|\n| 1-5   | ✅     | Yes             |\n| 6     | 🔄 50% | Partial         |\n| 7-8   | ⏳     | No              |\n\n**Total: 5/8 phases complete. Multi-head attention working!**\n\n**Quick Test:** `cd experiments/phase_05_multi_head_attention && python task_0*_*.py`\n
