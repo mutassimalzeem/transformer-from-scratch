@@ -160,11 +160,3 @@ You can also enter any phase directory and run the task files one by one.
 - Watch how shapes change from file to file rather than trying to memorize formulas first.
 - Revisit the flow graphic after each phase so the full architecture stays connected in your head.
 
-## Recommended Positioning
-
-If you publish this as two versions, keep the code mostly the same and present it differently:
-
-- Student version: emphasize sequence, explanation, reflection, and repeated practice
-- Professional version: emphasize fast lookup, architecture review, and implementation recall
-
-The codebase already supports both styles well. The main difference is the README, presentation, and learning guidance.
